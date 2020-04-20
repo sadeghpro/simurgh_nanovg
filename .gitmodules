@@ -1,0 +1,3 @@
+[submodule "desktop/src/main/c/nanovg"]
+	path = desktop/src/main/c/nanovg
+	url = git@github.com:sadeghpro/nanovg.git

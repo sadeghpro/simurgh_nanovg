@@ -1,0 +1,30 @@
+task buildMac(type: Exec) {
+    commandLine "clang", "-dynamiclib", "-std=gnu99", "-o", "../build/libs/mac/libnanovg.dylib", "-lglfw",
+            "-framework", "Cocoa", "-framework", "OpenGL", "-framework", "IOKit", "-framework", "CoreVideo",
+            "-I../resources/headers/mac",
+            "-I../resources/headers",
+            "-L../resources/libs/mac",
+            "src/main/c/nanovg/src/nanovg.c",
+            "src/main/c/jni/JniNanoVG.c",
+            "src/main/c/jni/JniNanoVGGL3.c"
+}
+
+task buildWin64 {
+    doLast {
+        exec {
+            commandLine "x86_64-w64-mingw32-gcc", "-c", "-DNANOVG_GLEW",
+                    "-I../resources/headers/windows/x64",
+                    "-I../resources/headers/windows",
+                    "-I../resources/headers",
+                    "src/main/c/nanovg/src/nanovg.c",
+                    "src/main/c/jni/JniNanoVG.c",
+                    "src/main/c/jni/JniNanoVGGL3.c"
+        }
+        exec {
+            commandLine "x86_64-w64-mingw32-gcc", "-shared", "-o", "../build/libs/win64/nanovg.dll",
+                    "nanovg.o", "JniNanoVG.o", "JniNanoVGGL3.o",
+                    "-L../resources/libs/windows/x64",
+                    "-lglfw3", "-lglew32", "-lopengl32"
+        }
+    }
+}
