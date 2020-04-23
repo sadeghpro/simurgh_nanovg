@@ -6,10 +6,6 @@
 
 #ifdef NANOVG_GLEW
     #include "glew.h"
-//    if(glewInit() != GLEW_OK) {
-//		printf("Could not init glew.\n");
-//		return -1;
-//	}
 #endif
 #include "glfw3.h"
 #include <stdio.h>
@@ -19,7 +15,7 @@
 extern "C" {
 #endif
 
-JNIEXPORT jlong JNICALL Java_ir_simurgh_nanovg_NanoVGGL3_nvgCreate(JNIEnv *env, jclass clazz, jint flags) {
+JNIEXPORT jlong JNICALL Java_dev_simurgh_core_jni_nanovg_NanoVGGL3_nvgCreate(JNIEnv *env, jclass clazz, jint flags) {
 #ifdef NANOVG_GLEW
     glewExperimental = GL_TRUE;
 	if(glewInit() != GLEW_OK) {
