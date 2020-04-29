@@ -3,3 +3,25 @@
 
 # Ignore Gradle build output directory
 build
+
+
+# CMake
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CMakeCache.txt
+
+
+# android
+*.iml
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/captures
+.externalNativeBuild
+.cxx

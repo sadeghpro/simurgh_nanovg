@@ -9,3 +9,5 @@
 
 rootProject.name = 'simurgh-nanovg-native'
 include 'desktop'
+include 'android'
+include 'android:app'
