@@ -1,0 +1,21 @@
+task buildIPhoneDevice(type: Exec) {
+    commandLine "xcodebuild", "-project", "ios.xcodeproj",
+            "-sdk", "iphoneos",
+            "CONFIGURATION_BUILD_DIR=../build/libs/iphonedevice",
+            "OTHER_CFLAGS=\"-miphoneos-version-min=7.0\""
+}
+
+task buildIPHoneSimulator(type: Exec) {
+    commandLine "xcodebuild", "-project", "ios.xcodeproj",
+            "-sdk", "iphonesimulator",
+            "CONFIGURATION_BUILD_DIR=../build/libs/iphonesimulator"
+}
+
+
+task buildIPhone(type: Exec) {
+    commandLine "lipo", "../build/libs/iphonesimulator/libios.a", "../build/libs/iphonedevice/libios.a",
+            "-create", "-output", "../build/libs/iphone/libnanovg.a"
+}
+
+buildIPhone.dependsOn buildIPhoneDevice
+buildIPhone.dependsOn buildIPHoneSimulator
