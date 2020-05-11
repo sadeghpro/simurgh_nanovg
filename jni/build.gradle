@@ -98,3 +98,5 @@ uploadArchives {
         }
     }
 }
+
+uploadArchives.dependsOn(':android:app:build')
