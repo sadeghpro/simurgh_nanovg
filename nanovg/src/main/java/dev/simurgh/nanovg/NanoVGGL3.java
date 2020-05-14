@@ -1,6 +1,6 @@
-package dev.simurgh.core.jni.nanovg;
+package dev.simurgh.nanovg;
 
-public class NanoVGGLES2 {
+public class NanoVGGL3 {
 
     public static final int
             NVG_ANTIALIAS       = 1<<0,

@@ -9,7 +9,7 @@
 extern "C" {
 #endif
 
-JNIEXPORT jlong JNICALL Java_dev_simurgh_core_jni_nanovg_NanoVGGLES2_nvgCreate(JNIEnv *env, jclass clazz, jint flags) {
+JNIEXPORT jlong JNICALL Java_dev_simurgh_nanovg_NanoVGGLES2_nvgCreate(JNIEnv *env, jclass clazz, jint flags) {
     return (jlong)nvgCreateGLES2(flags);
 }
 

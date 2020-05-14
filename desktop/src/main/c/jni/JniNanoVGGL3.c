@@ -15,7 +15,7 @@
 extern "C" {
 #endif
 
-JNIEXPORT jlong JNICALL Java_dev_simurgh_core_jni_nanovg_NanoVGGL3_nvgCreate(JNIEnv *env, jclass clazz, jint flags) {
+JNIEXPORT jlong JNICALL Java_dev_simurgh_nanovg_NanoVGGL3_nvgCreate(JNIEnv *env, jclass clazz, jint flags) {
 #ifdef NANOVG_GLEW
     glewExperimental = GL_TRUE;
 	if(glewInit() != GLEW_OK) {

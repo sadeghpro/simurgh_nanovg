@@ -2,8 +2,8 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'signing'
 
-group = 'dev.simurgh.core.jni'
-version = '0.1.1'
+group = 'dev.simurgh'
+version = '0.1.3'
 
 
 
@@ -72,7 +72,6 @@ uploadArchives {
             }
             pom.project {
                 name "Nanovg native library"
-//                packaging 'jar'
                 description 'Nanovg dynamic library and jni code for use in simurgh'
                 artifactId "nanovg"
                 url 'https://github.com/sadeghpro/simurgh_nanovg'

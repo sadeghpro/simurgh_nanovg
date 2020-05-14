@@ -1,4 +1,4 @@
-package dev.simurgh.core.jni.nanovg;
+package dev.simurgh.nanovg;
 
 
 public class NVGColor {
