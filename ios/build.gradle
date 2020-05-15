@@ -14,7 +14,7 @@ task buildIPHoneSimulator(type: Exec) {
 
 task buildIPhone(type: Exec) {
     commandLine "lipo", "../build/libs/iphonesimulator/libios.a", "../build/libs/iphonedevice/libios.a",
-            "-create", "-output", "../build/libs/iphone/libnanovg.a"
+            "-create", "-output", "../build/libs/iphone/robovm/ios/libs/libnanovg.a"
 }
 
 buildIPhone.dependsOn buildIPhoneDevice

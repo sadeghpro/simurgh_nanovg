@@ -1,0 +1,5 @@
+<config>	
+	<libs>
+		<lib>libs/libnanovg.a</lib>
+	</libs>
+</config>
