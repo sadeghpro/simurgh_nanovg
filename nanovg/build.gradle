@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 group = 'dev.simurgh'
-version = '0.1.4'
+version = '0.1.5'
 
 
 
