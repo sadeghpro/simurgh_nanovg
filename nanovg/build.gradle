@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 group = 'dev.simurgh'
-version = '0.1.5'
+version = '0.1.6'
 
 
 
@@ -43,10 +43,10 @@ task iosNativeJar(type: Jar, dependsOn: ":ios:buildIPhone") {
         attributes('Manifest-Version': version)
     }
     from('../build/libs/iphone/') {
-        include 'robovm/ios/libs/libnanovg.a'
+        include 'META-INF/robovm/ios/libs/libnanovg.a'
     }
     from('../ios/') {
-        include 'robovm/ios/robovm.xml'
+        include 'META-INF/robovm/ios/robovm.xml'
     }
 }
 
