@@ -37,6 +37,16 @@ task win64NativeJar(type: Jar, dependsOn: ":desktop:buildWin64") {
     }
 }
 
+task win32NativeJar(type: Jar, dependsOn: ":desktop:buildWin32") {
+    archiveClassifier.set('win32')
+    manifest {
+        attributes('Manifest-Version': version)
+    }
+    from('../build/') {
+        include 'libs/win32/nanovg.dll'
+    }
+}
+
 task iosNativeJar(type: Jar, dependsOn: ":ios:buildIPhone") {
     archiveClassifier.set('ios')
     manifest {
@@ -55,6 +65,7 @@ artifacts {
     archives jar
     archives macNativeJar
     archives win64NativeJar
+    archives win32NativeJar
     archives file: file('../android/app/build/outputs/aar/app-release.aar'), name: 'nanovg', type: 'aar', classifier: 'android'
     archives iosNativeJar
     archives javadocJar
